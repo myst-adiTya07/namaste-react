@@ -1,4 +1,4 @@
-import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
+import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -41,31 +41,31 @@ const Body = () => {
     return listOfRestaurant?.length === 0?(<Shimmer />):(
         <div className="body">
             <div className="filter flex items-center">
-                <div className="search m-4 p-4 ">
+                <div className="search p-4 ">
                     <input 
-                        type="text" className="border border-solid border-black" value={searchedText}
+                        type="text" className="px-6 py-1 border border-solid border-black" value={searchedText}
                         onChange={(e)=>{
                             setSearchedText(e.target.value);
                         }}
                     />
-                    <button className="px-3 py-1 bg-blue-200 m-4 rounded-lg"  onClick={()=>{
+                    <button className="px-3.5 py-1.5 bg-teal-400 hover:bg-blue-300 "  onClick={()=>{
                         //Filter the restau.. cards and update the ui
                         console.log(searchedText);
                         const filteredRestaurants =  listOfRestaurant?.filter((res) => res.info.name.toLowerCase().includes(searchedText.toLowerCase()));
                         setFilteredRestaurants(filteredRestaurants);
                     }}>Search</button>
                 </div>
-                <div className="px-4 py-0.5 flex items-center">
-                <button className="px-4 py-1 bg-gray-200 rounded-lg" onClick={()=>{
+                <div className="mx-auto px-4 py-0.5 flex items-center">
+                <button className="px-4 py-1 bg-teal-300  border border-black rounded-lg" onClick={()=>{
                     const filteredList = listOfRestaurant.filter(
                         (res) =>res.info.avgRating > 4
                     );
                     setFilteredRestaurants(filteredList);
                 }}>Top Rated Restaurants</button>
                 </div>
-                <div className="px-4 py-0.5 flex items-center">
-                    <label>UserName : </label>
-                    <input className=" border border-black p-2" 
+                <div className=" px-4 py-0.5 flex items-center">
+                    <label className="m-4 font-semibold">UserName : </label>
+                    <input className="px-auto bg-teal-300 border border-black p-1 rounded-md" 
                     value={loggedInUser}
                     onChange={(e) => setUserName(e.target.value)}/>
                 </div>

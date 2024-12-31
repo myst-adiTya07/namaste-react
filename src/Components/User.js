@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+
 const User = ()=>{
     const[]=useState();
 
@@ -7,9 +8,9 @@ const User = ()=>{
         
     },[])
     return(
-        <div className="column">
+        <div className="flex">
         <div className="user-card">
-          <img className="abt-img" src="https://cdn.pixabay.com/photo/2023/08/05/18/11/ai-generated-8171536_1280.png" />
+          <img className="w-48 h-48 rounded-full mx-auto mb-4 object-cover" src="https://cdn.pixabay.com/photo/2023/08/05/18/11/ai-generated-8171536_1280.png" />
           <div className="team-container">
             <h2>Aditya Gautam</h2>
             <p className="title">DEVeloper Ethusiast</p>

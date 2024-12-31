@@ -23,7 +23,7 @@ const Cart = () => {
        {cartItems.length === 0 && <h1 className='font-bold text-pink-600'>Na Chhedo Hme... Hm Sataye Huye Hai...😭</h1>}
         <ItemList items = {cartItems}/>
         </div> 
-    </div>
+    </div> 
   )
 }
 
